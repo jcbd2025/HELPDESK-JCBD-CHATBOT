@@ -1,0 +1,777 @@
+/* Variables para breakpoints */
+:root {
+  --mobile: 480px;
+  --tablet: 768px;
+  --desktop: 1024px;
+  --large-desktop: 1200px;
+}
+
+.containerPrincipal {
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.containerticket {
+  width: 92%;
+  height: auto;
+  margin: 10px auto;
+  padding: 60px;
+  background-color: rgb(224, 224, 241);
+  border-radius: 15px;
+  box-shadow: 15px 15px 15px rgba(15, 12, 207, 0.3);
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  gap: 15px;
+  flex-direction: column;
+  position: relative;
+}
+
+.tableWrapper {
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: white;
+  position: relative;
+  contain: strict;
+  overscroll-behavior: contain;
+  overflow-x: auto;
+}
+
+.containerInicio {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #343bbf;
+  border-bottom: 1px solid #ccc;
+  transition: margin-left 0.3s ease;
+}
+
+@media (max-width: 1024px) {
+  .containerInicio {
+    width: calc(95% - 40px);
+  }
+}
+
+@media (max-width: 768px) {
+  .containerInicio {
+    width: calc(100% - 30px);
+    border-radius: 10px;
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+  }
+}
+
+.containerInicioImg {
+  display: flex;
+  align-items: center;
+}
+
+.linkSinSubrayado {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: #e9ecef;
+  transition: background-color 0.3s ease;
+}
+
+.linkSinSubrayado:hover {
+  background-color: #0096c7;
+}
+
+.inputContainer {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.searchContainer {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.search {
+  padding: 10px;
+  padding-right: 40px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  width: 100%;
+}
+
+.buttonBuscar {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.buttonBuscar:hover {
+  transform: translateY(-50%) scale(1.1);
+}
+
+.searchIcon {
+  font-size: 18px;
+  color: #333;
+  position: relative;
+}
+
+.buttonBuscar:hover .searchIcon {
+  color: #343bbf;
+}
+
+.userContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.username {
+  font-size: 16px;
+  color: #f5f2f2;
+}
+
+.iconContainer {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  font-size: 20px;
+  color: #ecdfdf;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.icon:hover {
+  color: #ff0000;
+}
+
+.sectionContainer {
+  margin-bottom: 30px;
+}
+
+.sectionContainer h2 {
+  color: #333;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+.cardsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 120px;
+  padding: 15px;
+  border: 2px solid;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  flex: 1;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: all 0.5s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/*tabla*/
+.tablaContainer {
+  margin-top: 20px;
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+}
+
+.tableticket {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  table-layout: auto;
+  font-size: 14px;
+  backface-visibility: hidden;
+}
+
+.tableticket th,
+.tableticket td {
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  word-wrap: break-word;
+}
+
+.tableticket th {
+  position: sticky;
+  top: 0;
+  background-color: #99bff2;
+  color: rgb(6, 6, 6);
+  z-index: 10;
+  white-space: nowrap;
+}
+
+.tableticket tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.tableticket tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Paginación */
+.paginationControls {
+  position: sticky;
+  bottom: 0;
+  background-color: white;
+  padding: 15px;
+  border-top: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 5;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Estilos para prioridad y estado */
+.priority, .status {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 80px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.priority.alta { background-color: #fd7066; color: rgb(14, 13, 13); }
+.priority.media { background-color: #f5a05b; color: rgb(14, 13, 13); }
+.priority.baja { background-color: #7fe983; color: rgb(14, 13, 13); }
+
+.status.cerrado { background-color: #89f1e9; color: rgb(14, 13, 13); }
+.status.nuevo { background-color: #86e274; color: rgb(14, 13, 13); }
+.status.en-curso { background-color: #ffb13b; color: rgb(14, 13, 13); }
+.status.en-espera { background-color: #fafd34; color: rgb(14, 13, 13); }
+.status.resuelto { background-color: #7ca7da; color: rgb(14, 13, 13); }
+
+/* Media Queries */
+/* Para tablets */
+@media (max-width: 1024px) {
+  .containerInicio {
+    width: calc(95% - 40px);
+  }
+  
+  .containerticket {
+    padding: 15px;
+  }
+  
+  .tableticket th, 
+  .tableticket td {
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+  
+  .card {
+    min-width: 100px;
+    padding: 12px;
+  }
+}
+
+/* Para tablets pequeñas */
+@media (max-width: 768px) {
+  .containerInicio {
+    width: calc(100% - 30px);
+    border-radius: 10px;
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+  }
+  
+  .containerticket {
+    margin-left: 0 !important;
+    width: calc(100% - 20px);
+    padding: 12px;
+  }
+  
+  .inputContainer {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+  
+  .searchContainer {
+    width: 100%;
+  }
+  
+  .userContainer {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .cardsContainer {
+    gap: 10px;
+  }
+  
+  .card {
+    min-width: calc(50% - 10px);
+    max-width: calc(50% - 10px);
+  }
+  
+  .paginationControls {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .rowsPerPageSelector,
+  .pagination {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .filterGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .toolbar {
+    flex-direction: column;
+    gap: 15px;
+    align-items: stretch;
+  }
+  
+  .actions {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+/* Para móviles */
+@media (max-width: 480px) {
+  .containerticket {
+    width: calc(100% - 10px);
+    margin: 5px auto;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  
+  .containerInicio {
+    padding: 10px;
+  }
+  
+  .sectionContainer h2 {
+    font-size: 1.2rem;
+  }
+  
+  .cardsContainer {
+    gap: 8px;
+  }
+  
+  .card {
+    min-width: 100%;
+    max-width: 100%;
+    padding: 10px;
+  }
+  
+  .tableticket {
+    font-size: 12px;
+  }
+  
+  .tableticket th, 
+  .tableticket td {
+    padding: 6px 8px;
+  }
+  
+  .priority, .status {
+    min-width: 70px;
+    font-size: 11px;
+  }
+  
+  .search {
+    font-size: 14px;
+    padding: 8px;
+    padding-right: 35px;
+  }
+  
+  .linkSinSubrayado {
+    padding: 8px;
+    font-size: 14px;
+    text-align: center;
+  }
+  
+  .filterGroup label {
+    font-size: 12px;
+  }
+  
+  .filterGroup input,
+  .filterGroup select {
+    padding: 6px;
+    font-size: 12px;
+  }
+}
+
+/* Para móviles muy pequeños */
+@media (max-width: 320px) {
+  .containerticket {
+    padding: 8px;
+  }
+  
+  .tableticket th, 
+  .tableticket td {
+    padding: 4px 6px;
+    font-size: 11px;
+  }
+  
+  .priority, .status {
+    min-width: 60px;
+    font-size: 10px;
+    padding: 3px 5px;
+  }
+  
+  .paginationButton {
+    min-width: 28px;
+    height: 28px;
+    padding: 3px 6px;
+  }
+}
+
+/* Utilidades */
+.uppercase {
+  text-transform: uppercase;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.hidden-mobile {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .hidden-mobile {
+    display: none;
+  }
+}
+
+/* Resto de tus estilos existentes... */
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.filterPanel {
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.filterGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.filterGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.filterGroup label {
+  margin-bottom: 5px;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.filterGroup input,
+.filterGroup select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.filterActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.applyButton {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.applyButton:hover {
+  background-color: #45a049;
+}
+
+.clearButton {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.clearButton:hover {
+  background-color: #d32f2f;
+}
+
+.tableContainer {
+  margin-top: 20px;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.tablaContainer table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tablaContainer th,
+.tablaContainer td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.tablaContainer th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+}
+
+.filterSelect {
+  width: 85px;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+@media print {
+  .toolbar,
+  .filterPanel {
+    display: none;
+  }
+}
+
+.exportDropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.exportButton {
+  background: none;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 8px 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #555;
+  transition: all 0.2s;
+  gap: 5px;
+}
+
+.exportButton:hover {
+  background-color: #e9e9e9;
+  color: #333;
+}
+
+.dropdownIcon {
+  font-size: 12px;
+  transition: transform 0.2s;
+}
+
+.exportDropdownContent {
+  position: relative;
+  background-color: rgb(255, 255, 255);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.exportOption {
+  width: 100%;
+  text-align: left;
+  padding: 8px 12px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #555;
+}
+
+.exportOption:hover {
+  background-color: #f5f5f5;
+}
+
+.mostrasfiltros {
+  font-size: 12px;
+  transition: transform 0.2s;
+}
+
+.Buttonfiltros {
+  padding: 5px 10px;
+  margin: 0 5px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  max-height: 30px;
+  display: flex;
+}
+
+.Buttonfiltros:nth-child(1) {
+  background-color: #ffc107;
+  color: #212529;
+}
+
+.rowsPerPageSelector {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.rowsSelect {
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.rowsInfo {
+  font-size: 14px;
+  color: #555;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.paginationButton {
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  background-color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  height: 32px;
+}
+
+.paginationButton:hover:not(:disabled) {
+  background-color: #f0f0f0;
+}
+
+.paginationButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.paginationButton.active {
+  background-color: #343bbf;
+  color: white;
+  border-color: #343bbf;
+}
+
+.paginationEllipsis {
+  padding: 5px;
+  user-select: none;
+}
+
+.linkTicket {
+  color: #343bbf;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.linkTicket:hover {
+  color: #2a0a8a;
+  text-decoration: underline;
+}
+
+.clickableRow {
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.clickableRow:hover {
+  background-color: #f5f5f5;
+}

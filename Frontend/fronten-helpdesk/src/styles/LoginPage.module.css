@@ -1,0 +1,337 @@
+/* Variables para breakpoints */
+:root {
+  --mobile: 480px;
+  --tablet: 768px;
+  --desktop: 1024px;
+}
+
+body {
+  background: url(../imagenes/logo\ fondo.jpg);
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  /* Centrar horizontalmente */
+  align-items: center;
+  /* Centrar verticalmente */
+
+}
+
+
+.Login {
+  width: 85%;
+  padding: 40px;
+  background-color: rgba(223, 226, 236, 0.5);
+  border-radius: 15px;
+  box-shadow: 15px 15px 15px rgba(15, 12, 207, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 35px;
+
+}
+
+header {
+  text-align: center;
+}
+
+.empresarial {
+  width: 160px;
+  height: 140px;
+  border-radius: 100%;
+  animation: subir 2s ease-in-out infinite;
+  display: block;
+  margin: 0 auto;
+}
+
+@keyframes subir {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+header h1 {
+  font-size: 12px;
+  color: #0e0f0f;
+  margin-bottom: 20px;
+}
+
+.login-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.form-group input {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #96a1f5;
+  font-size: 16px;
+}
+
+.inicio {
+  padding: 5px;
+  padding-right: 60px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  margin-bottom: 15px;
+  /* Espacio entre los inputs */
+}
+
+
+.buttonLogin {
+  padding: 12px 24px;
+  width: 100%;
+  max-width: 200px;
+  background-color: #3045bf;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 20px auto 0;
+  display: block;
+  font-family: "Gorditas", serif;
+  font-size: 16px;
+}
+
+.buttonLogin:hover {
+  background-color: #7eabdb;
+}
+
+/* Media Queries para pantallas más grandes */
+@media (min-width: 1200px) {
+  .Login {
+    width: 60%;
+    /* Ajuste para pantallas grandes */
+  }
+
+  header h1 {
+    font-size: 32px;
+  }
+
+  .form-group input {
+    padding: 14px 14px 14px 50px;
+    /* Más espacio para el icono en pantallas grandes */
+    font-size: 18px;
+  }
+
+  .iconsinicio {
+    left: 15px;
+    /* Ajuste para pantallas grandes */
+    font-size: 24px;
+    /* Tamaño del icono más grande */
+  }
+}
+
+.mensaje {
+  color: rgb(226, 205, 205);
+  text-align: center;
+  margin-top: 10px;
+  /* Espacio entre el botón y el mensaje */
+}
+
+p {
+  text-align: center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin-top: 20px;
+  /* Espacio entre el mensaje y el texto adicional */
+}
+
+/* Estilos para el modal */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background-color: white;
+  border-radius: 8px;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  animation: modalFadeIn 0.3s ease-out;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modalHeader {
+  padding: 16px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modalErrorTitle {
+  color: #dc3545;
+  margin: 0;
+}
+
+.modalWarningTitle {
+  color: #ffc107;
+  margin: 0;
+}
+
+.modalInfoTitle {
+  color: #17a2b8;
+  margin: 0;
+}
+
+.modalCloseButton {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.2s;
+}
+
+.modalCloseButton:hover {
+  color: #333;
+}
+
+.modalBody {
+  padding: 20px;
+  text-align: center;
+}
+
+.errorIcon, .warningIcon, .infoIcon {
+  font-size: 48px;
+  margin-bottom: 16px;
+  display: inline-block;
+}
+
+.errorIcon svg {
+  color: #dc3545;
+  width: 48px;
+  height: 48px;
+}
+
+.warningIcon svg {
+  color: #ffc107;
+  width: 48px;
+  height: 48px;
+}
+
+.infoIcon svg {
+  color: #17a2b8;
+  width: 48px;
+  height: 48px;
+}
+
+.modalActions {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.modalButtonError {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.modalButtonError:hover {
+  background-color: #c82333;
+}
+
+.modalButtonWarning {
+  background-color: #ffc107;
+  color: #212529;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.modalButtonWarning:hover {
+  background-color: #e0a800;
+}
+
+.modalButtonInfo {
+  background-color: #17a2b8;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.modalButtonInfo:hover {
+  background-color: #138496;
+}
+
+/* Estilos para el botón de carga */
+.buttonLogin:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+
+/* Contenedor para el campo de contraseña con botón de toggle */
+.passwordContainer {
+  position: relative;
+  width: 100%;
+}
+
+.passwordToggle {
+  position: absolute;
+  right: 10px;
+  top: 30%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.eyeIcon {
+  font-size: 16px;
+}
+
+.passwordToggle:hover {
+  color: #3045bf;
+}
