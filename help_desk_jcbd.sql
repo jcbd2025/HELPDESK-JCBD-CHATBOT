@@ -434,3 +434,15 @@ ALTER TABLE `usuarios_tickets`
   ADD CONSTRAINT `usuarios_tickets_ibfk_1` FOREIGN KEY (`id_usuario1`) REFERENCES `usuarios` (`id_usuario`) ON DELETE CASCADE,
   ADD CONSTRAINT `usuarios_tickets_ibfk_2` FOREIGN KEY (`id_ticket3`) REFERENCES `tickets` (`id_ticket`) ON DELETE CASCADE;
 COMMIT;
+
+USE DATABASE help_desk_jcbd;
+CREATE TABLE `cliente_externos` (
+  `id_externo` int(11) NOT NULL AUTO_INCREMENT,
+  `id_ticket` int(11) NOT NULL,
+  `nombre` varchar(100) NOT NULL,
+  `correo` varchar(150) NOT NULL,
+  `telefono` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`id_externo`),
+  KEY `id_ticket` (`id_ticket`),
+  CONSTRAINT `cliente_externos_ibfk_1` FOREIGN KEY (`id_ticket`) REFERENCES `tickets` (`id_ticket`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;

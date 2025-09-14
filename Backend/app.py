@@ -8,6 +8,8 @@ from routes.grupos import grupos_bp
 from routes.entidades import entidades_bp
 from routes.chatbot import chatbot_bp
 from routes.whatsapp import whatsapp_bp
+from routes.tickets import tickets_bp
+from routes.chat import chat_bp
 
 
 
@@ -21,10 +23,11 @@ app.register_blueprint(grupos_bp, url_prefix="/grupos")
 app.register_blueprint(entidades_bp, url_prefix="/entidades")
 app.register_blueprint(chatbot_bp, url_prefix="/chatbot")
 app.register_blueprint(whatsapp_bp, url_prefix="/whatsapp")
+app.register_blueprint(tickets_bp, url_prefix="/api/tickets")
+app.register_blueprint(chat_bp, url_prefix="/api/chat")
 
 if __name__ == "__main__":
-    app.run(debug=True)
-
+    app.run(host="0.0.0.0", port=5000, debug=True)
 
 
 
